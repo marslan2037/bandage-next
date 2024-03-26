@@ -5,13 +5,25 @@ const wishlistSlice = createSlice({
   initialState: {
     isWishlistMenuOpen: false,
     items: [],
+    itemExist: {}
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
+      if(!state.itemExist[`${action.payload.id}`]) {
+        state.itemExist[`${action.payload.id}`] = true;
+        state.items.push(action.payload);
+      }
     },
     removeItem: (state, action) => {
-      state.items.pop();
+      if(state.itemExist[`${action.payload.id}`]) {
+        delete state.itemExist[`${action.payload.id}`];
+        let indexToRemove = items.findIndex(item => item.id === action.payload.id);
+        if (indexToRemove !== -1) {
+            array.splice(indexToRemove, 1);
+        }
+      } else {
+        console.log('no item found')
+      }
     },
     clearWishlist: (state, action) => {
       //RTK - either Mutate the existing  state or return a new State

@@ -9,11 +9,23 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
-      // if()
+      if(state.itemsCount[`${action.payload.id}`]) {
+        state.itemsCount[`${action.payload.id}`]++;
+      } else {
+        state.items.push(action.payload);
+        state.itemsCount[`${action.payload.id}`] = 1;
+      }
     },
     removeItem: (state, action) => {
-      state.items.pop();
+      if(state.itemsCount[`${action.payload.id}`]) {
+        state.itemsCount[`${action.payload.id}`]--;
+        let indexToRemove = items.findIndex(item => item.id === action.payload.id);
+        if (indexToRemove !== -1) {
+            array.splice(indexToRemove, 1);
+        }
+      } else {
+        console.log('no item found')
+      }
     },
     clearCart: (state, action) => {
       //RTK - either Mutate the existing  state or return a new State

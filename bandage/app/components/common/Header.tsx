@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import {toggleCartMenu} from '../../utils/redux_toolkit/cartSlice';
 import { toggleWishlistMenu } from "@/app/utils/redux_toolkit/wishlistSlice";
-import Drawer from "./drawer";
+// import Drawer from "./drawer";
 
 export default function Header() {
     // toggleCartMenu()

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/redux_toolkit/cartSlice";
+import { addItem as addWishlistItem } from "../utils/redux_toolkit/wishlistSlice";
 
 export default function FeaturedProducts({mainHeading, subHeading, description, shopPage}: any) {
     const [products, setProducts]:any = useState();
@@ -10,6 +11,11 @@ export default function FeaturedProducts({mainHeading, subHeading, description, 
     function addItemtoCart(item: any) {
         console.log(item)
         dispatch(addItem(item));
+    }
+    
+    function addItemtoWishlist(item: any) {
+        console.log(item)
+        dispatch(addWishlistItem(item));
     }
 
     const productsLimit = useRef(10);
@@ -52,8 +58,8 @@ export default function FeaturedProducts({mainHeading, subHeading, description, 
                                 <p>{item.categories}</p>
 
                                 <h5 className="price">${item.price}</h5>
-                                <h5>W</h5>
-                                <h5  onClick={()=>addItemtoCart(item) }>C</h5>
+                                <h5 onClick={() => addItemtoWishlist(item)}>W</h5>
+                                <h5 onClick={()=>addItemtoCart(item) }>C</h5>
                             </div>
                     </div>)
                     )}
