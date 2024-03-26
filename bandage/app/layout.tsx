@@ -1,6 +1,12 @@
+// 'use client'
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import TopBar from "./components/common/TopBar";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import SocialBar from "./components/common/SocialBar";
+import { Providers } from "./utils/redux_toolkit/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="main-container">
+          <Providers>
+            <TopBar />
+            <Header />
+            {children}
+            <SocialBar />
+            <Footer />
+            </Providers>
+        </div>
+      </body>
     </html>
   );
 }
