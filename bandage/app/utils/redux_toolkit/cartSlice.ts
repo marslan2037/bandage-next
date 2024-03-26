@@ -5,10 +5,12 @@ const cartSlice = createSlice({
   initialState: {
     isCartMenuOpen: false,
     items: [],
+    itemsCount: {}
   },
   reducers: {
     addItem: (state, action) => {
       state.items.push(action.payload);
+      // if()
     },
     removeItem: (state, action) => {
       state.items.pop();

@@ -43,8 +43,8 @@ export default function FeaturedProducts({mainHeading, subHeading, description, 
                 <div className="products-container">
                     {products.map((item:any, index:any) => (
 
-                    <div className="single-product">
-                        <img src="assets/images/product-card-1.png" alt="" />
+                    <div key={item.id} className="single-product">
+                        <img height={120} src={item.thumbnail} alt="" />
 
                             <div className="content">
                                 <h5>{item.title}</h5>
