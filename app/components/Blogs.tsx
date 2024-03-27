@@ -24,9 +24,9 @@ export default function Blogs() {
                         <h4>Loudest à la Madison #1 (Lintegral)</h4>
 
                         <p>
-                            {`We focus on ergonomics and meeting
-                            you where you work. It's only a
-                            keystroke away.`}
+                        We focus on ergonomics and meeting
+                            you where you work. Its only a
+                            keystroke away.
                         </p>
 
                         <div className="info">
@@ -88,9 +88,9 @@ export default function Blogs() {
                         <h4>Loudest à la Madison #1 (Lintegral)</h4>
 
                         <p>
-                            {`We focus on ergonomics and meeting
-                            you where you work. It's only a
-                            keystroke away.`}
+                        We focus on ergonomics and meeting
+                            you where you work. Its only a
+                            keystroke away.
                         </p>
 
                         <div className="info">
@@ -152,9 +152,9 @@ export default function Blogs() {
                         <h4>Loudest à la Madison #1 (Lintegral)</h4>
 
                         <p>
-                            {`We focus on ergonomics and meeting
-                            you where you work. It's only a
-                            keystroke away.`}
+                        We focus on ergonomics and meeting
+                            you where you work. Its only a
+                            keystroke away.
                         </p>
 
                         <div className="info">
