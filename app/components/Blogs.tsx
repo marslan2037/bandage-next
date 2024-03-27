@@ -21,7 +21,7 @@ export default function Blogs() {
                             <li><a href="#">New</a></li>
                         </ul>
 
-                        <h4>{`Loudest à la Madison #1 (L'integral)`}</h4>
+                        <h4>Loudest à la Madison #1 (Lintegral)</h4>
 
                         <p>
                             {`We focus on ergonomics and meeting
@@ -85,7 +85,7 @@ export default function Blogs() {
                             <li><a href="#">New</a></li>
                         </ul>
 
-                        <h4>{`Loudest à la Madison #1 (L'integral)`}</h4>
+                        <h4>Loudest à la Madison #1 (Lintegral)</h4>
 
                         <p>
                             {`We focus on ergonomics and meeting
@@ -149,7 +149,7 @@ export default function Blogs() {
                             <li><a href="#">New</a></li>
                         </ul>
 
-                        <h4>{`Loudest à la Madison #1 (L'integral)`}</h4>
+                        <h4>Loudest à la Madison #1 (Lintegral)</h4>
 
                         <p>
                             {`We focus on ergonomics and meeting
