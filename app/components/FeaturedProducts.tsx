@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, toggleCartMenu } from "@/utils/redux_toolkit/cartSlice";
-import { addItem as addWishlistItem, toggleWishlistMenu } from "@/utils/redux_toolkit/wishlistSlice";
+// import { addItem, toggleCartMenu } from "@/utils/redux_toolkit/cartSlice";
+import { addItem, toggleCartMenu } from "../utils/redux_toolkit/cartSlice";
+import { addItem as addWishlistItem, toggleWishlistMenu } from "../utils/redux_toolkit/wishlistSlice";
 
 export default function FeaturedProducts({mainHeading, subHeading, description, shopPage}: any) {
     const [products, setProducts]:any = useState();
