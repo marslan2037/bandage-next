@@ -12,12 +12,12 @@ export default function Home() {
   const description = 'Problems trying to resolve the conflict between';
   return (
     <>
-      <Banner />
+      {/* <Banner />
       <FeaturedProducts mainHeading={mainHeading} subHeading={subHeading} description={description} shopPage={false} />
       <Services />
       <Testimonials />
       <Blogs />
-      <CallToAction />
+      <CallToAction /> */}
     </>
   );
 }
