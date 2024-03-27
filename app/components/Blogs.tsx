@@ -21,12 +21,12 @@ export default function Blogs() {
                             <li><a href="#">New</a></li>
                         </ul>
 
-                        <h4>Loudest à la Madison #1 (L'integral)</h4>
+                        <h4>{`Loudest à la Madison #1 (L'integral)`}</h4>
 
                         <p>
-                            We focus on ergonomics and meeting
+                            {`We focus on ergonomics and meeting
                             you where you work. It's only a
-                            keystroke away.
+                            keystroke away.`}
                         </p>
 
                         <div className="info">
@@ -85,12 +85,12 @@ export default function Blogs() {
                             <li><a href="#">New</a></li>
                         </ul>
 
-                        <h4>Loudest à la Madison #1 (L'integral)</h4>
+                        <h4>{`Loudest à la Madison #1 (L'integral)`}</h4>
 
                         <p>
-                            We focus on ergonomics and meeting
+                            {`We focus on ergonomics and meeting
                             you where you work. It's only a
-                            keystroke away.
+                            keystroke away.`}
                         </p>
 
                         <div className="info">
@@ -149,12 +149,12 @@ export default function Blogs() {
                             <li><a href="#">New</a></li>
                         </ul>
 
-                        <h4>Loudest à la Madison #1 (L'integral)</h4>
+                        <h4>{`Loudest à la Madison #1 (L'integral)`}</h4>
 
                         <p>
-                            We focus on ergonomics and meeting
+                            {`We focus on ergonomics and meeting
                             you where you work. It's only a
-                            keystroke away.
+                            keystroke away.`}
                         </p>
 
                         <div className="info">

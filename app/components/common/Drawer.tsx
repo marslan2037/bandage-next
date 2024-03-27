@@ -1,5 +1,5 @@
 'use client'
-// import { toggleCartMenu, addItem, removeItem, countItem } from "@/app/utils/redux_toolkit/cartSlice";
+// import { toggleCartMenu, addItem, removeItem, countItem } from "@/utils/redux_toolkit/cartSlice";
 import { useState } from "react";
 // import {toggleCartMenu} from '../../utils/redux_toolkit/cartSlice';
 import { useDispatch, useSelector } from "react-redux";
