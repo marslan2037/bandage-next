@@ -1,12 +1,12 @@
 // 'use client'
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import TopBar from "./components/common/TopBar";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
-import SocialBar from "./components/common/SocialBar";
-import { Providers } from "./utils/redux_toolkit/providers";
+import "@/app/globals.css";
+import TopBar from "@/app/components/common/TopBar";
+import Header from "@/app/components/common/Header";
+import Footer from "@/app/components/common/Footer";
+import SocialBar from "@/app/components/common/SocialBar";
+import { Providers } from "@/app/utils/redux_toolkit/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
