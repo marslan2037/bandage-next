@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-// import { addItem, toggleCartMenu } from "@/utils/redux_toolkit/cartSlice";
 import { addItem, toggleCartMenu } from "../utils/redux_toolkit/cartSlice";
 import { addItem as addWishlistItem, toggleWishlistMenu } from "../utils/redux_toolkit/wishlistSlice";
 

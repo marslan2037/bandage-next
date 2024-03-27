@@ -1,9 +1,9 @@
 "use client"
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import {toggleCartMenu, addItem as addCartItem, removeItem as removeCartItem } from '@/utils/redux_toolkit/cartSlice';
-import { toggleWishlistMenu, addItem as addWishlistItem, removeItem as removeWishlistItem } from "@/utils/redux_toolkit/wishlistSlice";
-import Drawer from "@/components/common/Drawer";
+import {toggleCartMenu, addItem as addCartItem, removeItem as removeCartItem } from '@/app/utils/redux_toolkit/cartSlice';
+import { toggleWishlistMenu, addItem as addWishlistItem, removeItem as removeWishlistItem } from "@/app/utils/redux_toolkit/wishlistSlice";
+import Drawer from "../common/Drawer";
 
 export default function Header() {
     // toggleCartMenu()
