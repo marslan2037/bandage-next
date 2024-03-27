@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, toggleCartMenu } from "@/utils/redux_toolkit/cartSlice";

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { Provider, useDispatch, useSelector } from "react-redux";
 
 export default function Cart() {

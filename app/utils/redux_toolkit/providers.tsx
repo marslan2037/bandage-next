@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React from 'react';
 import { Provider } from 'react-redux'; // Adjust the import path to where your store is defined
 import appStore from '@/utils/redux_toolkit/appStore';

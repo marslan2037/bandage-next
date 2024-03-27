@@ -1,4 +1,4 @@
-'use client'
+"use client"
 // import '/assets/css/flickity.css'
 import Flickity from 'react-flickity-component';
 
