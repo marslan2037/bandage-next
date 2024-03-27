@@ -10,10 +10,8 @@ export default function Cart() {
         <>
             {
                 isCartMenuOpen ?
-                    <div>
-                        cart
-                    </div>
-                    : null
+                    <div>cart</div>
+                : null
             }
         </>
     )
