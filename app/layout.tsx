@@ -25,11 +25,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="main-container">
           <Providers>
-            <TopBar />
+            {/* <TopBar />
             <Header />
             {children}
             <SocialBar />
-            <Footer />
+            <Footer /> */}
           </Providers>
         </div>
       </body>
