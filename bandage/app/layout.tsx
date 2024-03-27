@@ -30,7 +30,7 @@ export default function RootLayout({
             {children}
             <SocialBar />
             <Footer />
-            </Providers>
+          </Providers>
         </div>
       </body>
     </html>

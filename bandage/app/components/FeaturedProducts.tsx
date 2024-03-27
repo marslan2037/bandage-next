@@ -1,21 +1,35 @@
 'use client';
 import { useEffect, useRef, useState } from "react"
-import { useDispatch } from "react-redux";
-import { addItem } from "../utils/redux_toolkit/cartSlice";
-import { addItem as addWishlistItem } from "../utils/redux_toolkit/wishlistSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, toggleCartMenu } from "../utils/redux_toolkit/cartSlice";
+import { addItem as addWishlistItem, toggleWishlistMenu } from "../utils/redux_toolkit/wishlistSlice";
 
 export default function FeaturedProducts({mainHeading, subHeading, description, shopPage}: any) {
     const [products, setProducts]:any = useState();
     const dispatch = useDispatch();
+    let isCartMenuOpen = useSelector((store: any) => store.cart.isCartMenuOpen);
+    let isWishlistMenuOpen = useSelector((store: any) => store.wishlist.isWishlistMenuOpen)
 
     function addItemtoCart(item: any) {
         console.log(item)
         dispatch(addItem(item));
+        if(!isCartMenuOpen) {
+            if(isWishlistMenuOpen) {
+                dispatch(toggleWishlistMenu());
+            }
+            dispatch(toggleCartMenu());
+        }
     }
     
     function addItemtoWishlist(item: any) {
         console.log(item)
         dispatch(addWishlistItem(item));
+        if(!isWishlistMenuOpen) {
+            if(isCartMenuOpen) {
+                dispatch(toggleCartMenu());
+            }
+            dispatch(toggleWishlistMenu());
+        }
     }
 
     const productsLimit = useRef(10);

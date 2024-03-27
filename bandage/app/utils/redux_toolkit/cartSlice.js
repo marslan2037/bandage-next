@@ -9,7 +9,7 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      if(state.itemsCount[`${action.payload.id}`]) {
+      if (state.itemsCount[`${action.payload.id}`]) {
         state.itemsCount[`${action.payload.id}`]++;
       } else {
         state.items.push(action.payload);
@@ -17,28 +17,34 @@ const cartSlice = createSlice({
       }
     },
     removeItem: (state, action) => {
-      if(state.itemsCount[`${action.payload.id}`]) {
+      if (state.itemsCount[`${action.payload.id}`]) {
         state.itemsCount[`${action.payload.id}`]--;
-        let indexToRemove = items.findIndex(item => item.id === action.payload.id);
-        if (indexToRemove !== -1) {
-            array.splice(indexToRemove, 1);
-        }
-      } else {
-        console.log('no item found')
+        if (!state.itemsCount[`${action.payload.id}`]) {
+          let indexToRemove = state.items.findIndex(item => item.id === action.payload.id);
+          if (indexToRemove !== -1) {
+            state.items.splice(indexToRemove, 1);
+          } else {
+            console.log('no item found')
+          }
+        } 
       }
+
+    },
+    countItem: (state, action) => {
+
     },
     clearCart: (state, action) => {
       //RTK - either Mutate the existing  state or return a new State
       state.items.length = 0; // originalState = []
 
-    //   return { items: [] }; // this new object will be replaced inside originalState = { items: [] }
+      //   return { items: [] }; // this new object will be replaced inside originalState = { items: [] }
     },
     toggleCartMenu: (state) => {
-        state.isCartMenuOpen = !state.isCartMenuOpen;
+      state.isCartMenuOpen = !state.isCartMenuOpen;
     }
   },
 });
 
-export const { addItem, removeItem, clearCart, toggleCartMenu } = cartSlice.actions;
+export const { addItem, removeItem, clearCart, toggleCartMenu, countItem } = cartSlice.actions;
 
 export default cartSlice.reducer;

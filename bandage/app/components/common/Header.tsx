@@ -1,21 +1,27 @@
 'use client'
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import {toggleCartMenu} from '../../utils/redux_toolkit/cartSlice';
-import { toggleWishlistMenu } from "@/app/utils/redux_toolkit/wishlistSlice";
-// import Drawer from "./drawer";
+import {toggleCartMenu, addItem as addCartItem, removeItem as removeCartItem } from '../../utils/redux_toolkit/cartSlice';
+import { toggleWishlistMenu, addItem as addWishlistItem, removeItem as removeWishlistItem } from "@/app/utils/redux_toolkit/wishlistSlice";
+import Drawer from "./Drawer";
 
 export default function Header() {
     // toggleCartMenu()
-    const {isCartMenuOpen , items: cartItems} = useSelector((store: any) => store.cart)
-    const {isWishlistMenuOpen, items: wishlistItems} = useSelector((store: any) => store.wishlist)
+    const {isCartMenuOpen , items: cartItems, itemsCount} = useSelector((store: any) => store.cart)
+    const {isWishlistMenuOpen, items: wishlistItems, itemExist} = useSelector((store: any) => store.wishlist)
     const dispatch = useDispatch();
 
     function  handleCartMenu() {
+        if(isWishlistMenuOpen) {
+            dispatch(toggleWishlistMenu())
+        }
         dispatch(toggleCartMenu())
     }
 
     function  handleWhislistMenu() {
+        if(isCartMenuOpen) {
+            dispatch(toggleCartMenu())
+        }
         dispatch(toggleWishlistMenu())
     }
 
@@ -27,7 +33,8 @@ export default function Header() {
                 <h3 className="logo">
                     <a href="#">Bandage</a>
                 </h3>
-                {/* <Drawer menuOpen={isCartMenuOpen} /> */}
+                <Drawer slice={'cart'} addItem={addCartItem} removeItem={removeCartItem} toggleMenu={toggleCartMenu} menuOpen={isCartMenuOpen} count={itemsCount} />
+                <Drawer slice={'wishlist'} addItem={addWishlistItem} removeItem={removeWishlistItem} toggleMenu={toggleWishlistMenu} menuOpen={isWishlistMenuOpen} count={itemExist} />
 
                 <ul>
                     <li><Link href="/">Home</Link></li>
@@ -36,8 +43,6 @@ export default function Header() {
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Pages</a></li>
-                    <li><a href="#">cart ( {cartItems?.length})</a></li>
-                    <li><a href="#">Wishlist ({wishlistItems?.length})</a></li>
                 </ul>
             </div>
 
@@ -85,6 +90,7 @@ export default function Header() {
                             </defs>
                         </svg>
                     </a>
+                        ({cartItems?.length})
                 </p>
 
                 <p onClick={handleWhislistMenu} className="icon">
@@ -100,6 +106,7 @@ export default function Header() {
                             </defs>
                         </svg>
                     </a>
+                        ({wishlistItems?.length})
                 </p>
             </div>
         </div>
